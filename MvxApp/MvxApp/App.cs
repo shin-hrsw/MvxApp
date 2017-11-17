@@ -11,7 +11,7 @@ namespace MvxApp.Core
                 .AsInterfaces()
                 .RegisterAsLazySingleton();
 
-            RegisterAppStart<ViewModels.MainViewModel>();
+            RegisterNavigationServiceAppStart<ViewModels.RegisterViewModel>();
         }
     }
 }
