@@ -105,11 +105,29 @@ namespace MvxApp.Droid
 		public partial class Id
 		{
 			
+			// aapt resource value: 0x7f040003
+			public const int DateText = 2130968579;
+			
+			// aapt resource value: 0x7f040007
+			public const int DetailText = 2130968583;
+			
 			// aapt resource value: 0x7f040000
 			public const int MvvmCrossTagId = 2130968576;
 			
 			// aapt resource value: 0x7f040001
 			public const int MvxBindingTagUnique = 2130968577;
+			
+			// aapt resource value: 0x7f040005
+			public const int TitleText = 2130968581;
+			
+			// aapt resource value: 0x7f040002
+			public const int textView1 = 2130968578;
+			
+			// aapt resource value: 0x7f040004
+			public const int textView2 = 2130968580;
+			
+			// aapt resource value: 0x7f040006
+			public const int textView3 = 2130968582;
 			
 			static Id()
 			{
@@ -128,7 +146,10 @@ namespace MvxApp.Droid
 			public const int MainView = 2130903040;
 			
 			// aapt resource value: 0x7f030001
-			public const int SplashScreen = 2130903041;
+			public const int RegisterView = 2130903041;
+			
+			// aapt resource value: 0x7f030002
+			public const int SplashScreen = 2130903042;
 			
 			static Layout()
 			{
