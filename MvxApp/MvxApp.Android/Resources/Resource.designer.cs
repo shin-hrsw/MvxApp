@@ -146,13 +146,10 @@ namespace MvxApp.Droid
 		{
 			
 			// aapt resource value: 0x7f030000
-			public const int MainView = 2130903040;
+			public const int RegisterView = 2130903040;
 			
 			// aapt resource value: 0x7f030001
-			public const int RegisterView = 2130903041;
-			
-			// aapt resource value: 0x7f030002
-			public const int SplashScreen = 2130903042;
+			public const int SplashScreen = 2130903041;
 			
 			static Layout()
 			{
