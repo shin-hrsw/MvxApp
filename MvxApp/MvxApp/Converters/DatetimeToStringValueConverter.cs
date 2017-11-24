@@ -8,32 +8,25 @@ using MvvmCross.Platform.Converters;
 
 namespace MvxApp.Core.Converters
 {
-    public class DatetimeToStringValueConverter : IMvxValueConverter
+    public class DatetimeToStringValueConverter : MvxValueConverter<DateTime, string>
     {
-        #region IMvxValueConverterの実装
-        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        protected override string Convert(DateTime value, Type targetType, object parameter, CultureInfo culture)
         {
-            if(value is DateTime)
-            {
-                return ((DateTime)value).ToString("yyyy/MM/dd");
-            }
-
-            return value;
+            var format = parameter as string;
+            if (string.IsNullOrWhiteSpace(format)) { format = "yyyy/MM/dd"; }
+            return value.ToString(format);
         }
 
-        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        protected override DateTime ConvertBack(string value, Type targetType, object parameter, CultureInfo culture)
         {
-            if(value is string)
+            var format = parameter as string;
+            if (string.IsNullOrWhiteSpace(format)) { format = "yyyy/MM/dd"; }
+            DateTime dt;
+            if(DateTime.TryParseExact(value, format, null, DateTimeStyles.None,out dt))
             {
-                DateTime dt;
-                if (DateTime.TryParseExact(value.ToString(), "yyyy/MM/dd", null, DateTimeStyles.None, out dt))
-                {
-                    return dt;
-                }
+                return dt;
             }
-
-            return value;
+            throw new InvalidCastException();
         }
-        #endregion
     }
 }
