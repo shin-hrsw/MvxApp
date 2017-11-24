@@ -24,11 +24,11 @@ namespace MvxApp.Core.ViewModels
             set { SetProperty(ref _title, value); }
         }
 
-        private string _text;
-        public string Text
+        private string _detail;
+        public string Detail
         {
-            get => this._text;
-            set { SetProperty(ref _text, value); }
+            get => this._detail;
+            set { SetProperty(ref _detail, value); }
         }
 
         private IMvxCommand _clear;
@@ -40,7 +40,7 @@ namespace MvxApp.Core.ViewModels
         {
             this.Date = DateTime.Today;
             this.Title = string.Empty;
-            this.Text = string.Empty;
+            this.Detail = string.Empty;
             this._clear = new MvxCommand(Clear);
         }
         #endregion
@@ -50,7 +50,7 @@ namespace MvxApp.Core.ViewModels
         {
             this.Date = DateTime.Now;
             this.Title = string.Empty;
-            this.Text = string.Empty;
+            this.Detail = string.Empty;
         }
         #endregion
     }

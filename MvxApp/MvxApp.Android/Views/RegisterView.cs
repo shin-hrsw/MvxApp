@@ -31,7 +31,7 @@ namespace MvxApp.Droid.Views
             var set = this.CreateBindingSet<RegisterView, Core.ViewModels.RegisterViewModel>();
             set.Bind(date).For(c => c.Text).To(vm => vm.Date);
             set.Bind(title).For(c => c.Text).To(vm => vm.Title);
-            set.Bind(detail).For(c => c.Text).To(vm => vm.Text);
+            set.Bind(detail).For(c => c.Text).To(vm => vm.Detail);
             set.Bind(clear).For("Click").To(vm => vm.ClearCommand);
             set.Apply();
         }
