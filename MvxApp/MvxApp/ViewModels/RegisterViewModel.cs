@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MvvmCross.Core.Navigation;
+using MvvmCross.Platform;
 using MvvmCross.Core.ViewModels;
 
 namespace MvxApp.Core.ViewModels
@@ -49,7 +51,7 @@ namespace MvxApp.Core.ViewModels
             this.Detail = string.Empty;
             this._register = new MvxCommand(Register);
             this._clear = new MvxCommand(Clear);
-            this._list = new MvxCommand(() => { });
+            this._list = new MvxCommand(List);
         }
         #endregion
 
@@ -72,6 +74,11 @@ namespace MvxApp.Core.ViewModels
             this.Date = DateTime.Now;
             this.Title = string.Empty;
             this.Detail = string.Empty;
+        }
+
+        private void List()
+        {
+            Mvx.Resolve<IMvxNavigationService>().Navigate<ListViewModel>();
         }
         #endregion
     }
