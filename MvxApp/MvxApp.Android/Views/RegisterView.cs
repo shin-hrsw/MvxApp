@@ -29,12 +29,17 @@ namespace MvxApp.Droid.Views
             var title = FindViewById<EditText>(Resource.Id.TitleText);
             var detail = FindViewById<EditText>(Resource.Id.DetailText);
             var clear = FindViewById<Button>(Resource.Id.ClearButton);
+            var register = FindViewById<Button>(Resource.Id.RegisterButton);
+            var list = FindViewById<Button>(Resource.Id.ListButton);
+
             var set = this.CreateBindingSet<RegisterView, Core.ViewModels.RegisterViewModel>();
             set.Bind(date).For(c => c.Text).To(vm => vm.Date)
                 .WithConversion<DatetimeToStringValueConverter>("yyyy/MM/dd");
             set.Bind(title).For(c => c.Text).To(vm => vm.Title);
             set.Bind(detail).For(c => c.Text).To(vm => vm.Detail);
             set.Bind(clear).For("Click").To(vm => vm.ClearCommand);
+            set.Bind(register).For("Click").To(vm => vm.RegisterCommand);
+            set.Bind(list).For("Click").To(vm => vm.ListCommand);
             set.Apply();
         }
     }
