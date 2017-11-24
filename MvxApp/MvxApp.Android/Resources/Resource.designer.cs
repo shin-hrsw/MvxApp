@@ -114,11 +114,17 @@ namespace MvxApp.Droid
 			// aapt resource value: 0x7f040007
 			public const int DetailText = 2130968583;
 			
+			// aapt resource value: 0x7f04000a
+			public const int ListButton = 2130968586;
+			
 			// aapt resource value: 0x7f040000
 			public const int MvvmCrossTagId = 2130968576;
 			
 			// aapt resource value: 0x7f040001
 			public const int MvxBindingTagUnique = 2130968577;
+			
+			// aapt resource value: 0x7f040009
+			public const int RegisterButton = 2130968585;
 			
 			// aapt resource value: 0x7f040005
 			public const int TitleText = 2130968581;

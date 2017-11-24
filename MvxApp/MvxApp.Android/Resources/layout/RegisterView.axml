@@ -35,11 +35,23 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/DetailText"  />
+        android:id="@+id/DetailText" />
     <Button
         android:text="クリア"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/ClearButton"
+        android:textSize="20dp" />
+    <Button
+        android:text="登録"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/RegisterButton"
+        android:textSize="20dp" />
+    <Button
+        android:text="一覧"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/ListButton"
         android:textSize="20dp" />
 </LinearLayout>
