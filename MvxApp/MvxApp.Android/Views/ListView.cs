@@ -10,10 +10,13 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 
+using MvvmCross.Core.ViewModels;
 using MvvmCross.Droid.Views;
 
 namespace MvxApp.Droid.Views
 {
+    [Activity(Label = "一覧画面")]
+    [MvxViewFor(typeof(MvxApp.Core.ViewModels.ListViewModel))]
     public class ListView : MvxActivity
     {
         protected override void OnCreate(Bundle bundle)
