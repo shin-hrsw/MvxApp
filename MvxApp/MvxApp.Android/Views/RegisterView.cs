@@ -12,6 +12,7 @@ using Android.Widget;
 using MvvmCross.Binding.BindingContext;
 using MvvmCross.Core.ViewModels;
 using MvvmCross.Droid.Views;
+using MvxApp.Core.Converters;
 
 namespace MvxApp.Droid.Views
 {
@@ -29,7 +30,8 @@ namespace MvxApp.Droid.Views
             var detail = FindViewById<EditText>(Resource.Id.DetailText);
             var clear = FindViewById<Button>(Resource.Id.ClearButton);
             var set = this.CreateBindingSet<RegisterView, Core.ViewModels.RegisterViewModel>();
-            set.Bind(date).For(c => c.Text).To(vm => vm.Date);
+            set.Bind(date).For(c => c.Text).To(vm => vm.Date)
+                .WithConversion<DatetimeToStringValueConverter>();
             set.Bind(title).For(c => c.Text).To(vm => vm.Title);
             set.Bind(detail).For(c => c.Text).To(vm => vm.Detail);
             set.Bind(clear).For("Click").To(vm => vm.ClearCommand);
