@@ -105,6 +105,9 @@ namespace MvxApp.Droid
 		public partial class Id
 		{
 			
+			// aapt resource value: 0x7f040008
+			public const int ClearButton = 2130968584;
+			
 			// aapt resource value: 0x7f040003
 			public const int DateText = 2130968579;
 			

@@ -10,17 +10,45 @@ namespace MvxApp.Core.ViewModels
     public class RegisterViewModel : MvxViewModel
     {
         #region プロパティ
-        public DateTime Date { get; set; }
+        private DateTime _date;
+        public DateTime Date
+        {
+            get => this._date;
+            set { SetProperty(ref _date, value); }
+        }
 
-        public string Title { get; set; }
+        private string _title;
+        public string Title
+        {
+            get => this._title;
+            set { SetProperty(ref _title, value); }
+        }
 
-        public string Text { get; set; }
+        private string _text;
+        public string Text
+        {
+            get => this._text;
+            set { SetProperty(ref _text, value); }
+        }
+
+        private IMvxCommand _clear;
+        public IMvxCommand ClearCommand => this._clear;
         #endregion
 
         #region コンストラクタ
         public RegisterViewModel()
         {
             this.Date = DateTime.Today;
+            this.Title = string.Empty;
+            this.Text = string.Empty;
+            this._clear = new MvxCommand(Clear);
+        }
+        #endregion
+
+        #region メソッド(private)
+        private void Clear()
+        {
+            this.Date = DateTime.Now;
             this.Title = string.Empty;
             this.Text = string.Empty;
         }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:local="http://schemas.android.com/apk/res-auto"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -28,7 +28,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/TitleText"
-        local:MvxBind="Text Title"  />
+        local:MvxBind="Text Title" />
     <TextView
         android:text="内容："
         android:textAppearance="?android:attr/textAppearanceMedium"
@@ -40,4 +40,11 @@
         android:layout_height="wrap_content"
         android:id="@+id/DetailText"
         local:MvxBind="Text Text" />
+    <Button
+        android:text="クリア"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/ClearButton"
+        android:textSize="20dp"
+        local:MvxBind="Click ClearCommand"  />
 </LinearLayout>
