@@ -29,10 +29,10 @@ namespace MvxApp.Droid.Views
             var detail = FindViewById<EditText>(Resource.Id.DetailText);
             var clear = FindViewById<Button>(Resource.Id.ClearButton);
             var set = this.CreateBindingSet<RegisterView, Core.ViewModels.RegisterViewModel>();
-            set.Bind(date).To(vm => vm.Date);
-            set.Bind(title).To(vm => vm.Title);
-            set.Bind(detail).To(vm => vm.Text);
-            set.Bind(clear).To(vm => vm.ClearCommand);
+            set.Bind(date).For(c => c.Text).To(vm => vm.Date);
+            set.Bind(title).For(c => c.Text).To(vm => vm.Title);
+            set.Bind(detail).For(c => c.Text).To(vm => vm.Text);
+            set.Bind(clear).For("Click").To(vm => vm.ClearCommand);
             set.Apply();
         }
     }
