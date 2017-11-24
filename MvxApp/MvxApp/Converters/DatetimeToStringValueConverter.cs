@@ -21,8 +21,7 @@ namespace MvxApp.Core.Converters
         {
             var format = parameter as string;
             if (string.IsNullOrWhiteSpace(format)) { format = "yyyy/MM/dd"; }
-            DateTime dt;
-            if(DateTime.TryParseExact(value, format, null, DateTimeStyles.None,out dt))
+            if (DateTime.TryParseExact(value, format, null, DateTimeStyles.None, out DateTime dt))
             {
                 return dt;
             }

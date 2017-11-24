@@ -56,10 +56,12 @@ namespace MvxApp.Core.ViewModels
         #region メソッド(private)
         private void Register()
         {
-            var todo = new Models.ToDo();
-            todo.Date = this.Date;
-            todo.Title = this.Title;
-            todo.Text = this.Detail;
+            var todo = new Models.ToDo()
+            {
+                Date = this.Date,
+                Title = this.Title,
+                Text = this.Detail
+            };
 
             Holders.ToDoHolder.Current.ToDoList.Add(todo);
             Clear();
